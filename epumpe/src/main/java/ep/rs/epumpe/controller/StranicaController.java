@@ -12,6 +12,7 @@ import ep.rs.bckndepumpe.dao.GradDAO;
 import ep.rs.bckndepumpe.dao.PumpaDAO;
 import ep.rs.bckndepumpe.dto.Grad;
 import ep.rs.bckndepumpe.dto.Pumpa;
+import ep.rs.epumpe.exception.PumpaNotFoundException;
 
 @Controller
 public class StranicaController {
@@ -89,13 +90,13 @@ public class StranicaController {
 	 * */
 	
 	@RequestMapping(value = "/prikazi/{id}/pumpa") 
-	public ModelAndView prikaziPumpa(@PathVariable int id)  {
+	public ModelAndView prikaziPumpa(@PathVariable int id)throws PumpaNotFoundException  {
 		
 		ModelAndView mv = new ModelAndView("stranica");
 		
 		Pumpa pumpa = pumpaDAO.get(id);
 		
-		//if(pumpa == null) throw new ProductNotFoundException();
+		if(pumpa == null) throw new PumpaNotFoundException();
 		
 		// update the view count
 		pumpa.setPoseta(pumpa.getPoseta() + 1);

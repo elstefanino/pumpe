@@ -1,4 +1,4 @@
-/*package ep.rs.epumpe.exception;
+package ep.rs.epumpe.exception;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -24,9 +24,9 @@ public class GlobalDefaultExceptionHandler {
 		mv.addObject("naslov", "404 Error Page");
 		
 		return mv;
-	}*/
+	}
+
 	
-/*	
 	@ExceptionHandler(PumpaNotFoundException.class)
 	public ModelAndView handlerProductNotFoundException() {
 		
@@ -39,18 +39,14 @@ public class GlobalDefaultExceptionHandler {
 		mv.addObject("naslov", "Pumpa nije dostupna");
 		
 		return mv;
-	}*/
-		
-	
-/*	@ExceptionHandler(Exception.class)
+	}
+	@ExceptionHandler(Exception.class)
 	public ModelAndView handlerException(Exception ex) {
 		
 		ModelAndView mv = new ModelAndView("greska");
 		
 		mv.addObject("greskaNaslov", "Kontaktirajte administratora!!");
 		
-		
-		 only for debugging your application
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);
 		
@@ -61,6 +57,6 @@ public class GlobalDefaultExceptionHandler {
 		mv.addObject("naslov", "Greska");
 		
 		return mv;
-	}}*/
+	}}
 			
 	

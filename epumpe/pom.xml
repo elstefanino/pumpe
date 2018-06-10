@@ -12,6 +12,12 @@
 		<spring.version>4.3.6.RELEASE</spring.version>
 		</properties>
   <dependencies>
+  <!-- Povezivanje sa backendom -->
+  <dependency>
+    <groupId>ep.rs</groupId>
+  <artifactId>bckndepumpe</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
 <!-- JAVA EE -->
 		<dependency>
 			<groupId>javax</groupId>
@@ -29,6 +35,17 @@
 		</dependency>
 		
 		<!-- SPRING MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
